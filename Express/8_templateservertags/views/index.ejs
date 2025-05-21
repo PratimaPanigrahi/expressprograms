@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <h1>Ejs template engine</h1>
+   <h1>
+     <!-- displaying varibale data -->
+    <%= name %>
+
+    <!-- creating variable -->
+        <% var i=10; %>
+
+    <!-- displaying variable data -->
+    <%= i %>
+<br>
+    <!-- Comment -->
+    <%# Comment will not be present in the rendered HTML %>
+<br>
+
+<!-- if -->
+<% if(name) { %>
+    Hello <%= name  %>
+    <% } %>
+<br>
+
+    <!-- if with condition -->
+    <% if(id==21) {%>
+        This is 21
+        <% } %>
+<br>
+
+    <!-- if else -->
+    <% if(id == 10) { %>
+        This is 10
+        <% }  else { %>
+            This is not 10
+            <%  } %>
+<br>
+
+            <!-- else if -->
+            <% if(id == 10){ %>
+                This is 10
+                <% } else if (id == 11) { %>
+                    This is 11
+                    <% } else { %>
+                        other
+                        <% } %>
+
+<br>
+    <!-- for loop -->
+    <% for (i =0; i<=4; i++) { %>
+        <%= i%>
+        <%= marks[i] %>
+        <% } %>
+
+<br>
+         <!-- for  in loop -->
+    <% for (const key in marks) { %>
+        <%= key %>
+        <%= marks[key] %>
+        <% } %>
+
+<br>
+        <!-- for of loop -->
+   <% for (const mark of marks) { %>
+       <%= mark %>
+       <% } %>
+
+<br>
+       <!-- for each loop -->
+  <% marks.forEach((value)=>{ %>
+      <%= value %>
+      <% }) %>
+
+<br>
+    <!-- while loop -->
+    <br>
+    <!-- for  in loop -->
+    <% var i = 0; %>
+   <% while (i<=4) {%>
+   <%= i %>
+   <%= marks[i] %>
+   <%= i++ %>
+   <% } %>
+
+   <br>
+<!-- Function call -->
+<% var current =new Date(); %>
+<%= current %>
+   </h1>
+</body>
+</html>

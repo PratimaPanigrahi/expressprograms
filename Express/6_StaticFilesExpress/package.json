@@ -1,0 +1,19 @@
+{
+  "name": "6_staticfilesexpress",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev":"nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

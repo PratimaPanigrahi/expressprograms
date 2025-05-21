@@ -1,0 +1,19 @@
+import express from 'express'
+import connectDB from './db/connectdB.js'
+//import { getAllDoc } from './models/student.js'
+//import { getAllspecificfield } from './models/student.js'
+import { getsingledocspsecified} from './models/student.js'
+import './models/student.js'
+const app = express()
+const port =process.env.PORT||'3000'
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb://localhost:27017"
+
+    connectDB(DATABASE_URL)
+// getAllDoc()
+//getAllspecificfield()
+getsingledocspsecified()
+
+
+    app.listen(port, ()=>{
+        console.log(`server listening at http://localhost:${port}`)
+    })
