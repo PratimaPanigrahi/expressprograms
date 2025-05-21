@@ -1,0 +1,100 @@
+steps to follow during creating file
+1.npm init -y
+2. npm install express
+3. npm install -D nodemon
+4. npm i ejs
+
+to create it in es6 
+write type :module below license
+and change in script line
+"scripts": {
+    "dev":"nodemon app"
+  },
+---------------------------------------------------------------------------------------------------------------------------
+//This is basic opening command in express js to create a initial page with basic import statements for routing method
+  import express from 'express'; //ES6 syntax
+const app = express()
+const port = process.env.PORT ||'3000'
+
+//routes
+//home
+app.get('/',(req,res)=>{
+    res.send(`Get method called
+        <h1>Home page</h1>
+        `);
+})
+
+this command is used to end the program.....to resond the user (listen syntax is used to respond user from sever)
+app.listen(port,()=>{
+    console.log(`server is running at http://localhost:${port}`);
+})
+------------------------------------------------------------------------------------------------------------------------------
+
+M.V.C (m is /data) ( v is  view/html ) (c is controller/logic)
+v req it goes to controller it goes to model then model goes to logic of controller then it is pasted on html vie
+
+crud method contains put patch delete get post (gpppd)
+-------------------------------------------------------------------------------------------------------------------------------
+
+steps to create
+controllers are always called in routes 
+public files are alwas called in view folder
+
+steps to be followed wile creating the files and folders
+  ____________For initial project_______
+  1) just initiaze the packages with syntax and create app.js in folders
+
+  __________for routing method__________________
+  1) just initiaze the packages with syntax and create app.js in folders
+  2) in this the outing method will be used wth middle ware and next function
+
+  _______________for router method__________________
+  1) just initiaze the packages with syntax and create app.js in folders
+  2)create routes folders
+          in this routes folder create the file name of method that are initialized in the app.js file . create same name file in routes and give path.
+  3)AND CALL THAT ROUTES PATH IN THE APP.JS
+
+
+_____________for controllers_________
+1) just initiaze the packages with syntax and create app.js in folders
+2) create routes and controller folders
+3) in the controller folder the file will be created were the logic for the program will be written 
+4) controller logic will will be called in the routes folder by giving path to it
+5) then this will be called in app.js which is staring file of the project
+
+_______________for views___________
+1) just initiaze the packages with syntax and create app.js in folders
+2) create routes and controller and view folders
+3) in the controller folder the file will be created were the logic for the program will be written 
+4) controller logic will will be called in the routes folder by giving path to it
+5) then in view it will giv html files which will allow you to give customize effect of the main screen tha will be apper after the project starts.(The views folder contains html fiels )
+6) then this will be called in app.js which is staring file of the project
+
+_______________for static file express_____________
+1) just initiaze the packages with syntax and create app.js in folders
+2) create routes and controller and view folders
+3) in the controller folder the file will be created were the logic for the program will be written 
+4) controller logic will will be called in the routes folder by giving path to it
+5) then in view it will giv html files which will allow you to give customize effect of the main screen tha will be apper after the project starts.(The views folder contains html fiels )
+6) then create public folder in which it will contains all the extra contains file like css ,images, audio, javascript files that can be used in the project
+7) the public folder files path are mainly used in view folder for html customization
+8) then this will be called in app.js which is staring file of the project
+-------------------------------------------------------------------------------------------------------------
+
+Mongo db set up
+import express from 'express'
+//const mongose = require('mongoose');
+import mongooes from 'mongoose'
+import connectDB from './db/connectDB.js'
+const app = express()
+const port =process.env.PORT||'3000'
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb://localhost:27017/InfobytMongoDb"
+
+//mongoose.connect("mongodb://localhost:27017/InfobytMongoDb").then(()=>{
+    // console.log('connected successfullly')
+    // })
+
+    connectDB(DATABASE_URL)
+    app.listen(port, ()=>{
+        console.log(`server listening at http://localhost:${port}`)
+    })
